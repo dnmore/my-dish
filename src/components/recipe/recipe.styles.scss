@@ -1,0 +1,28 @@
+.recipe-container {
+  width: 50%;
+  margin: auto;
+  display: grid;
+  place-items: center;
+}
+
+.recipe-body-container {
+    display: flex;
+    flex-direction: column;
+    
+
+    h2 {
+        font-size: 24px;
+    }
+
+    img {
+        width: 100%;
+        
+    }
+
+    p {
+        line-height: 2;
+        text-align: justify;
+    }
+
+ 
+}
