@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import RecipeCard from "../recipe-card/recipe-card.component";
+import RecipeCard from "../../components/recipe-card/recipe-card.component";
 import "./recipes-list.styles.scss";
 
 const RecipesList = () => {

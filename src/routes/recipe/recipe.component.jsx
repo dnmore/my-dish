@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import RecipeBody from "../../components/recipe-body/recipe-body.component";
+
 import "./recipe.styles.scss";
 
 const Recipe = () => {
@@ -18,13 +20,8 @@ const Recipe = () => {
     <div className="recipe-container">
       {recipe.map((detail) => {
         return (
-          <div className="recipe-body-container">
-            <h2>{detail.strMeal}</h2>
-            <img src={detail.strMealThumb} alt={detail.strMeal} />
-
-            <h3>How to prepare {detail.strMeal}</h3>
-            <p>{detail.strInstructions}</p>
-          </div>
+          <RecipeBody detail={detail} key={from} />
+          
         );
       })}
     </div>

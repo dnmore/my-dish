@@ -1,0 +1,23 @@
+.search-container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  place-items: center;
+
+  form {
+    display: grid;
+    gap: 10px;
+    
+
+    input {
+      padding: 10px 20px;
+      font: inherit;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      font: inherit;
+    }
+  }
+}

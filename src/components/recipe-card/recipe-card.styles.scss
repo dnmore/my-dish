@@ -29,7 +29,8 @@
     }
   }
   .card-body-container {
-    // height: 90px;
+    height: 90px;
+    width: 200px;
     padding: 25px 35px;
     display: flex;
     flex-direction: column;
@@ -41,7 +42,8 @@
     position: absolute;
   }
 
-  p {
+  h2 {
     font-size: 16px;
+    
   }
 }
