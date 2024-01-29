@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import RecipeBody from "../../components/recipe-body/recipe-body.component";
 
-import "./recipe.styles.scss";
+import { RecipeContainer } from "./recipe.styles";
 
 const Recipe = () => {
   const location = useLocation();
@@ -17,14 +17,14 @@ const Recipe = () => {
   }, [from]);
 
   return (
-    <div className="recipe-container">
+    <RecipeContainer>
       {recipe.map((detail) => {
         return (
           <RecipeBody detail={detail} key={from} />
           
         );
       })}
-    </div>
+    </RecipeContainer>
   );
 };
 

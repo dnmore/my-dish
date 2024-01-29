@@ -2,22 +2,21 @@ import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as RecipeLogo } from "../../assets/logo.svg";
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
-import "./navigation.styles.scss";
+import { NavigationContainer, NavLink } from "./navigation.styles";
 
 const Navigation = () => {
   return (
     <Fragment>
-      <div className="navigation">
-        <Link className="logo-container" to="/">
-          <RecipeLogo className="logo" />
+      <NavigationContainer>
+        <Link to="/">
+          <RecipeLogo />
         </Link>
-        <div className="nav-links">
-          <Link className="nav-link" to="/search">
-            <ArrowRight />
-            SEARCH BY INGREDIENT
-          </Link>
-        </div>
-      </div>
+
+        <NavLink to="/search">
+          <ArrowRight />
+          SEARCH BY INGREDIENT
+        </NavLink>
+      </NavigationContainer>
 
       <Outlet />
     </Fragment>

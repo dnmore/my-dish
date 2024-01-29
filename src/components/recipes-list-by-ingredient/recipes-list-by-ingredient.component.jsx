@@ -12,7 +12,7 @@ const RecipesListByIngredient = ({ parameter }) => {
   }, [parameter]);
 
   return (
-    <div className="recipes-list-container">
+    <div className="container">
       {ingredientRecipes.map((card) => {
         return <RecipeCard card={card} key={card.idMeal} />;
       })}

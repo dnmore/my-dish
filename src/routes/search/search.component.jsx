@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RecipesListByIngredient from "../../components/recipes-list-by-ingredient/recipes-list-by-ingredient.component";
 
-import "./search.styles.scss";
+import { SearchContainer} from "./search.styles";
 
 
 export default function Search() {
@@ -15,7 +15,7 @@ export default function Search() {
   };
 
   return (
-    <div className="search-container">
+    <SearchContainer>
       <form onSubmit={onSubmitHandler}>
       <input
         type="text"
@@ -29,7 +29,7 @@ export default function Search() {
       
     </form>
     <RecipesListByIngredient parameter={parameter} />
-    </div>
+    </SearchContainer>
     
 
   );

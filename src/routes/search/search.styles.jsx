@@ -1,5 +1,9 @@
-.search-container {
-  width: 80%;
+import styled from "styled-components";
+
+
+
+export const SearchContainer = styled.div `
+width: 80%;
   margin: auto;
   display: grid;
   place-items: center;
@@ -32,4 +36,5 @@
       }
     }
   }
-}
+`
+

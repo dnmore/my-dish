@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
 
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
-import "./recipe-card.styles.scss";
+import { CardContainer, CardBackgroundImage, CardBodyContainer } from "./recipe-card.styles";
 
 const RecipeCard = ({ card }) => {
   const { idMeal, strMeal, strMealThumb } = card;
   return (
-    <div className="card-container">
-      <div className="background-image">
+    <CardContainer>
+      <CardBackgroundImage>
         <img src={strMealThumb} alt={strMeal} />
-      </div>
-      <div className="card-body-container">
-        <h2>{strMeal}</h2>
+      </CardBackgroundImage>
+      <CardBodyContainer>
+        <h3>{strMeal}</h3>
         <Link
-          className="recipe-nav-link"
+          className="recipes-nav-link"
           to="/recipes/recipe"
           state={{ from: `${idMeal}` }}
         >
           RECIPE
           <ArrowRight />
         </Link>
-      </div>
-    </div>
+      </CardBodyContainer>
+    </CardContainer>
   );
 };
 

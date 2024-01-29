@@ -1,25 +1,26 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
 
-import "./category.styles.scss";
+import { CategoryContainer, CategoryBackgroundImage, CategoryBodyContainer } from "./category.styles";
+
 
 const Category = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
 
   return (
-    <div className="category-container">
-      <div className="background-image">
+    <CategoryContainer>
+      <CategoryBackgroundImage>
         <img src={strCategoryThumb} alt={strCategory} />
-      </div>
+      </CategoryBackgroundImage>
 
-      <div className="category-body-container">
+      <CategoryBodyContainer>
         <h2>{strCategory}</h2>
         <Link className="recipes-nav-link" to="/recipes" state={{ from: `${strCategory}` }}>
           RECIPES
           <ArrowRight />
         </Link>
-      </div>
-    </div>
+      </CategoryBodyContainer>
+    </CategoryContainer>
   );
 };
 
