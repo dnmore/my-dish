@@ -1,19 +1,20 @@
-.logo {
-  height: 100px;
+.navigation {
   width: 80%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
 
   .nav-link {
     text-decoration: none;
-    font-size: 30px;
-    color: black;
-    cursor: pointer;
+    font: inherit;
+    color: #F41919;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
 
-    &:hover {
-        color: rgb(61, 58, 58);
-    }
+  
   }
 }

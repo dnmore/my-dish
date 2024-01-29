@@ -25,8 +25,8 @@ export default function Search() {
           setMainIngredient(event.target.value);
         }}
       ></input>
-      <button type="Submit">Search</button>
-      <h3>{parameter}</h3>
+      <button type="Submit">SEARCH</button>
+      
     </form>
     <RecipesListByIngredient parameter={parameter} />
     </div>

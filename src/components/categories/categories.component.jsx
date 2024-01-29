@@ -1,17 +1,15 @@
-import Category from "../category/category.component"
+import Category from "../category/category.component";
 
-import "./categories.styles.scss"
+import "./categories.styles.scss";
 
-const Categories = ({categories})=> {
-
-    return(
-        <div className="categories-container">
-            {categories.map((category) => {
-        
+const Categories = ({ categories }) => {
+  return (
+    <div className="categories-container">
+      {categories.map((category) => {
         return <Category key={category.idCategory} category={category} />;
       })}
-        </div>
-        )
-}
+    </div>
+  );
+};
 
 export default Categories;

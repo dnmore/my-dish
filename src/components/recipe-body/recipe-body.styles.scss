@@ -1,25 +1,25 @@
 .recipe-body-container {
-    display: flex;
-    flex-direction: column;
-    
+  display: flex;
+  flex-direction: column;
 
-    h2 {
-        font-size: 24px;
-    }
+  h2 {
+    font-size: 24px;
+  }
 
-    img {
-        width: 100%;
-        
-    }
+  h3 {
+    font-size: 20px;
+  }
 
-    p {
-        line-height: 2;
-        text-align: justify;
-    }
+  img {
+    width: 100%;
+  }
 
-    .ingredients {
-        list-style: none;
-    }
+  p {
+    line-height: 2;
+    text-align: justify;
+  }
 
- 
+  .ingredients {
+    list-style: none;
+  }
 }
