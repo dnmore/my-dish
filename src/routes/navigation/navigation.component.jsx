@@ -14,7 +14,7 @@ const Navigation = () => {
 
         <NavLink to="/search">
           <ArrowRight />
-          SEARCH BY INGREDIENT
+          SEARCH BY MAIN INGREDIENT
         </NavLink>
       </NavigationContainer>
 

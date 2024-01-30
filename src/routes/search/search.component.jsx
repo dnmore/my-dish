@@ -23,7 +23,7 @@ export default function Search() {
       <FormContainer onSubmit={onSubmitHandler}>
         <SearchInput
           type="text"
-          placeholder="type here"
+          placeholder="type ingredient here"
           value={mainIngredient}
           onChange={(event) => {
             setMainIngredient(event.target.value);

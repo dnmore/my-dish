@@ -6,3 +6,9 @@ export const RecipesListByIngredientContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
+
+export const Error = styled.div`
+  margin: 20px auto;
+  color: #f41919;
+  
+`;

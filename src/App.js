@@ -5,6 +5,7 @@ import Navigation from "./routes/navigation/navigation.component";
 import RecipesList from "./routes/recipes-list/recipes-list.component";
 import Recipe from "./routes/recipe/recipe.component";
 import Search from "./routes/search/search.component";
+
 import { GlobalStyle } from "./global.styles";
 
 const App = () => {
