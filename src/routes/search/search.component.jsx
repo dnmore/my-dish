@@ -1,8 +1,12 @@
 import { useState } from "react";
 import RecipesListByIngredient from "../../components/recipes-list-by-ingredient/recipes-list-by-ingredient.component";
 
-import { SearchContainer} from "./search.styles";
-
+import {
+  SearchContainer,
+  FormContainer,
+  SearchInput,
+  SearchButton,
+} from "./search.styles";
 
 export default function Search() {
   const [mainIngredient, setMainIngredient] = useState("");
@@ -16,22 +20,18 @@ export default function Search() {
 
   return (
     <SearchContainer>
-      <form onSubmit={onSubmitHandler}>
-      <input
-        type="text"
-        placeholder="type here"
-        value={mainIngredient}
-        onChange={(event) => {
-          setMainIngredient(event.target.value);
-        }}
-      ></input>
-      <button type="Submit">SEARCH</button>
-      
-    </form>
-    <RecipesListByIngredient parameter={parameter} />
+      <FormContainer onSubmit={onSubmitHandler}>
+        <SearchInput
+          type="text"
+          placeholder="type here"
+          value={mainIngredient}
+          onChange={(event) => {
+            setMainIngredient(event.target.value);
+          }}
+        ></SearchInput>
+        <SearchButton type="Submit">SEARCH</SearchButton>
+      </FormContainer>
+      <RecipesListByIngredient parameter={parameter} />
     </SearchContainer>
-    
-
   );
 }
-
