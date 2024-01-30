@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const CategoryBackgroundImage = styled.div`
   width: 100%;
   height: 100%;
@@ -21,7 +23,6 @@ export const CategoryBodyContainer = styled.div`
 `;
 
 export const CategoryContainer = styled.div`
-  min-width: 20%;
   height: 200px;
   margin: 20px;
   display: flex;
@@ -41,4 +42,13 @@ export const CategoryContainer = styled.div`
       opacity: 0.8;
     }
   }
+`;
+
+export const CategoryNavLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f41919;
+  font-size: 14px;
+  font-weight: bold;
 `;

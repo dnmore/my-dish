@@ -1,25 +1,25 @@
-import { Link } from "react-router-dom";
+
 
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
-import { CardContainer, CardBackgroundImage, CardBodyContainer } from "./recipe-card.styles";
+import { CardContainer, CardBackgroundImage, CardBodyContainer, RecipeLink } from "./recipe-card.styles";
 
 const RecipeCard = ({ card }) => {
   const { idMeal, strMeal, strMealThumb } = card;
   return (
     <CardContainer>
+       
       <CardBackgroundImage>
         <img src={strMealThumb} alt={strMeal} />
       </CardBackgroundImage>
-      <CardBodyContainer>
+     <CardBodyContainer>
         <h3>{strMeal}</h3>
-        <Link
-          className="recipes-nav-link"
+        <RecipeLink
           to="/recipes/recipe"
           state={{ from: `${idMeal}` }}
         >
           RECIPE
           <ArrowRight />
-        </Link>
+        </RecipeLink>
       </CardBodyContainer>
     </CardContainer>
   );

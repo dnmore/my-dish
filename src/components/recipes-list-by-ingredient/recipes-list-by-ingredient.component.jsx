@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import RecipeCard from "../recipe-card/recipe-card.component";
+import { RecipesListByIngredientContainer } from "./recipes-list-by-ingredient.styles";
 
 const RecipesListByIngredient = ({ parameter }) => {
   const [ingredientRecipes, setIngredientRecipes] = useState([]);
@@ -12,11 +13,11 @@ const RecipesListByIngredient = ({ parameter }) => {
   }, [parameter]);
 
   return (
-    <div className="container">
+    <RecipesListByIngredientContainer>
       {ingredientRecipes.map((card) => {
         return <RecipeCard card={card} key={card.idMeal} />;
       })}
-    </div>
+    </RecipesListByIngredientContainer>
   );
 };
 

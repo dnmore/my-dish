@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
 
-import { CategoryContainer, CategoryBackgroundImage, CategoryBodyContainer } from "./category.styles";
-
+import {
+  CategoryContainer,
+  CategoryBackgroundImage,
+  CategoryBodyContainer,
+  CategoryNavLink,
+} from "./category.styles";
 
 const Category = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
@@ -15,10 +18,13 @@ const Category = ({ category }) => {
 
       <CategoryBodyContainer>
         <h2>{strCategory}</h2>
-        <Link className="recipes-nav-link" to="/recipes" state={{ from: `${strCategory}` }}>
+        <CategoryNavLink
+          to="/recipes"
+          state={{ from: `${strCategory}` }}
+        >
           RECIPES
           <ArrowRight />
-        </Link>
+        </CategoryNavLink>
       </CategoryBodyContainer>
     </CategoryContainer>
   );

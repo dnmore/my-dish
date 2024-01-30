@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import RecipeCard from "../../components/recipe-card/recipe-card.component";
+import { RecipesListContainer } from "./recipes-list.styles";
+
 
 const RecipesList = () => {
   const location = useLocation() 
@@ -15,11 +17,11 @@ const RecipesList = () => {
   }, [from]);
 
   return (
-    <div className="container">
+    <RecipesListContainer>
       {categoryRecipes.map((card) => {
         return <RecipeCard card={card} key={card.idMeal} />;
       })}
-    </div>
+    </RecipesListContainer>
   );
 };
 

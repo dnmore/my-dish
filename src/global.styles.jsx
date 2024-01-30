@@ -14,14 +14,6 @@ body {
       monospace;
   }
   
-  .container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
   
     h2 {
       font-size: 1.3rem;
@@ -40,13 +32,5 @@ body {
       
     }
   
-    .recipes-nav-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #F41919;
-      font-size: 14px;
-      font-weight: bold;
     }
-  }
 `;

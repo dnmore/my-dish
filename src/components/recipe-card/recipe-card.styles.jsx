@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const CardBackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
@@ -44,4 +46,13 @@ export const CardContainer = styled.div`
       opacity: 0.8;
     }
   }
+`;
+
+export const RecipeLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f41919;
+  font-size: 14px;
+  font-weight: bold;
 `;
