@@ -14,7 +14,7 @@ const RecipeCard = ({ card }) => {
      <CardBodyContainer>
         <h3>{strMeal}</h3>
         <RecipeLink
-          to="/recipes/recipe"
+          to="/recipe"
           state={{ from: `${idMeal}` }}
         >
           RECIPE

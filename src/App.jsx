@@ -6,6 +6,7 @@ import RecipesList from "./routes/recipes-list/recipes-list.component";
 import Recipe from "./routes/recipe/recipe.component";
 import Search from "./routes/search/search.component";
 
+
 import { GlobalStyle } from "./global.styles";
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="recipes" element={<RecipesList />} />
-          <Route path="recipes/recipe" element={<Recipe />} />
+          <Route path="recipe" element={<Recipe />} />
           <Route path="search" element={<Search />} />
         </Route>
       </Routes>
