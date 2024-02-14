@@ -13,11 +13,10 @@ export const CardBackgroundImage = styled.div`
 
 export const CardBodyContainer = styled.div`
   height: 120px;
-  width: 250px;
+  width: 180px;
   padding: 25px 35px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 1px solid black;
   background-color: white;
   opacity: 0.7;
@@ -26,8 +25,8 @@ export const CardBodyContainer = styled.div`
 
 export const CardContainer = styled.div`
   height: 200px;
-  width: 400px;
-  margin: 20px;
+  width: 280px;
+  margin: 20px auto;
   display: flex;
   align-items: center;
   justify-content: center;

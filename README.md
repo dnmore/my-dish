@@ -6,4 +6,7 @@ RecipeFinder is a recipe web application, where:
 
 * user can also filter recipes by a main ingredient.
 
-## Thanks for visiting this repo!
+## Stack
+
+* React
+* Mealdb API

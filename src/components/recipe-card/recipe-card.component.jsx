@@ -12,7 +12,7 @@ const RecipeCard = ({ card }) => {
         <img src={strMealThumb} alt={strMeal} />
       </CardBackgroundImage>
      <CardBodyContainer>
-        <h3>{strMeal}</h3>
+        <h4>{strMeal}</h4>
         <RecipeLink
           to="/recipe"
           state={{ from: `${idMeal}` }}
