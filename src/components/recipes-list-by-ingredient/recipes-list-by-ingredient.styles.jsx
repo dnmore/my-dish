@@ -7,8 +7,7 @@ export const RecipesListByIngredientContainer = styled.div`
   justify-content: center;
 `;
 
-export const Error = styled.div`
-  margin: 20px auto;
+export const Error = styled.p`
   color: #f41919;
-  
+  text-align: center;
 `;

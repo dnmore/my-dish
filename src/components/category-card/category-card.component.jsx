@@ -5,9 +5,9 @@ import {
   CategoryBackgroundImage,
   CategoryBodyContainer,
   CategoryNavLink,
-} from "./category.styles";
+} from "./category-card.styles";
 
-const Category = ({ category }) => {
+const CategoryCard = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
 
   return (
@@ -30,4 +30,4 @@ const Category = ({ category }) => {
   );
 };
 
-export default Category;
+export default CategoryCard;

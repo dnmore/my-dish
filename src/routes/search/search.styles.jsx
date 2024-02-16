@@ -1,17 +1,10 @@
 import styled from "styled-components";
 
-export const SearchContainer = styled.div`
-width: 100%;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-
-  
-  }
-`;
 export const FormContainer = styled.form`
-  display: grid;
+  display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const SearchInput = styled.input`

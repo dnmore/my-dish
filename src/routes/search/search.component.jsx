@@ -1,12 +1,8 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
+
 import RecipesListByIngredient from "../../components/recipes-list-by-ingredient/recipes-list-by-ingredient.component";
 
-import {
-  SearchContainer,
-  FormContainer,
-  SearchInput,
-  SearchButton,
-} from "./search.styles";
+import { FormContainer, SearchInput, SearchButton } from "./search.styles";
 
 export default function Search() {
   const [mainIngredient, setMainIngredient] = useState("");
@@ -19,7 +15,7 @@ export default function Search() {
   };
 
   return (
-    <SearchContainer>
+    <Fragment>
       <FormContainer onSubmit={onSubmitHandler}>
         <SearchInput
           type="text"
@@ -32,6 +28,6 @@ export default function Search() {
         <SearchButton type="Submit">SEARCH</SearchButton>
       </FormContainer>
       <RecipesListByIngredient parameter={parameter} />
-    </SearchContainer>
+    </Fragment>
   );
 }

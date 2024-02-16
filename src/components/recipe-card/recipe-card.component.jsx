@@ -1,5 +1,3 @@
-
-
 import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
 import { CardContainer, CardBackgroundImage, CardBodyContainer, RecipeLink } from "./recipe-card.styles";
 

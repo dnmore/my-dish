@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import RecipeCard from "../../components/recipe-card/recipe-card.component";
-import { RecipesListContainer } from "./recipes-list.styles";
+import { RecipesListContainer } from "./recipes-list-by-category.styles";
 
-
-const RecipesList = () => {
+const RecipesListByCategory = () => {
   const location = useLocation() 
   const { from } = location.state
   const [categoryRecipes, setCategoryRecipes] = useState([]);
@@ -15,7 +14,7 @@ const RecipesList = () => {
       .then((response) => response.json())
       .then((data) => setCategoryRecipes(data.meals));
   }, [from]);
-
+ 
   return (
     <RecipesListContainer>
       {categoryRecipes.map((card) => {
@@ -25,4 +24,4 @@ const RecipesList = () => {
   );
 };
 
-export default RecipesList;
+export default RecipesListByCategory;

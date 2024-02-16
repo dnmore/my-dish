@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
-import RecipesList from "./routes/recipes-list/recipes-list.component";
+import RecipesListByCategory from "./routes/recipes-list-by-category/recipes-list-by-category.component";
 import Recipe from "./routes/recipe/recipe.component";
 import Search from "./routes/search/search.component";
 
@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="recipes" element={<RecipesList />} />
+          <Route path="recipes" element={<RecipesListByCategory />} />
           <Route path="recipe" element={<Recipe />} />
           <Route path="search" element={<Search />} />
         </Route>

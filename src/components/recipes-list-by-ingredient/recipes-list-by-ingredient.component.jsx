@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 
 import RecipeCard from "../recipe-card/recipe-card.component";
-import { RecipesListByIngredientContainer, Error } from "./recipes-list-by-ingredient.styles";
+import {
+  RecipesListByIngredientContainer,
+  Error,
+} from "./recipes-list-by-ingredient.styles";
 
 const RecipesListByIngredient = ({ parameter }) => {
   const [ingredientRecipes, setIngredientRecipes] = useState([]);
@@ -12,7 +15,8 @@ const RecipesListByIngredient = ({ parameter }) => {
       .then((data) => setIngredientRecipes(data.meals));
   }, [parameter]);
 
-  if (ingredientRecipes === null) return <Error>Oops.. this ingredient has not been found!</Error>;
+  if (ingredientRecipes === null)
+    return <Error>Oops.. this ingredient has not been found!</Error>;
 
   return (
     <RecipesListByIngredientContainer>

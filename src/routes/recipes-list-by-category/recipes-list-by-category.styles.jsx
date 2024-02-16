@@ -5,4 +5,5 @@ export const RecipesListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 `;

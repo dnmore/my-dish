@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import Categories from "../../components/categories/categories.component";
+import CategoryCard from "../../components/category-card/category-card.component";
+import { CategoriesContainer } from "./home.styles";
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -12,13 +13,17 @@ function Home() {
       .then((data) => setCategories(data.categories));
   }, []);
 
+
   return (
     <>
-    <Outlet />
-    <Categories categories ={ categories }/>
+      <Outlet />
+      <CategoriesContainer>
+        {categories.map((category) => {
+          return <CategoryCard key={category.idCategory} category={category} />;
+        })}
+      </CategoriesContainer>
     </>
-    
   );
-};
+}
 
 export default Home;
