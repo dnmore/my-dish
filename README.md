@@ -7,13 +7,16 @@ Recipe web application built using React and Mealdb API.
 - filter recipes by category
 - view each recipe in detail with ingredients and preparation steps
 - filter recipes by main ingredient
+- filter recipes by area
 
 ## Stack
 
 - `react`
 - `react-router-dom`
 - `mealdb API`
-- `sass`
+- `tailwindcss`
+- `react-icons`
+- `hamburger-react`
 
 ## Cloning
 
