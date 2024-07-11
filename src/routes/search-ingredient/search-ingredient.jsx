@@ -1,5 +1,5 @@
 import { useState, Fragment } from "react";
-
+import { BiSearch } from "react-icons/bi";
 import RecipesListByIngredient from "../../components/recipes-list-by-ingredient/recipes-list-by-ingredient";
 
 export default function SearchIngredient() {
@@ -14,7 +14,13 @@ export default function SearchIngredient() {
 
   return (
     <Fragment>
-      <div
+       <div className="w-full h-40  bg-orange-500"></div>
+      <div className="mx-auto pt-6 px-8 max-w-3xl -mt-32 bg-slate-100">
+        <div className="py-4 px-6 text-center">
+          <h1 className="lg:text-6xl text-5xl font-extrabold tracking-tight text-gray-900">
+            Search by ingredient
+          </h1>
+         <div
         className="mx-auto
         max-w-2xl
         px-4
@@ -24,14 +30,12 @@ export default function SearchIngredient() {
         lg:max-w-7xl
         lg:px-8"
       >
-        <label className="block text-lg font-bold leading-6 text-gray-900 mb-4">
-          Search Ingredient
-        </label>
-        <form onSubmit={onSubmitHandler}>
+        
+        <form className="flex items-center flex-wrap gap-2" onSubmit={onSubmitHandler}>
           <input
-            className="block w-60 flex-1 border-2 rounded-lg border-gray-400 bg-transparent shadow-lg  py-1.5 pl-1 text-gray-500 placeholder:text-gray-400 outline-none focus:ring-0 sm:text-sm sm:leading-6"
+            className="block max-w-80 h-10 pl-4 flex-1 bg-transparent border-2 border-gray-400 py-1.5 text-gray-500 placeholder:text-gray-400 outline-none focus:ring-0 sm:text-sm sm:leading-6"
             type="text"
-            placeholder="type ingredient here"
+            placeholder="what are you looking for?"
             value={mainIngredient}
             onChange={(event) => {
               setMainIngredient(event.target.value);
@@ -39,12 +43,15 @@ export default function SearchIngredient() {
           ></input>
           <button
             type="submit"
-            className="rounded-md bg-indigo-600 px-3 py-2 mt-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Search
+            className="bg-orange-600 hover:bg-orange-600/75 px-6 h-10 text-xl font-semibold text-white"
+          > 
+            <BiSearch />
           </button>
         </form>
       </div>
+        </div>
+      </div>
+      
       <div>
         <RecipesListByIngredient parameter={parameter} />
       </div>

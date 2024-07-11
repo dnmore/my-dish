@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Fragment } from "react";
 import RecipeBody from "../../components/recipe-body/recipe-body";
+import Loader from "../../components/loader/loader";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -31,11 +32,12 @@ const Recipe = () => {
 
   return (
     <Fragment>
+      <div className="w-full h-40  bg-orange-500"></div>
       <div className="bg-white">
         <div className="pt-6">
           <div className="mx-auto mt-6 max-w-2xl sm:px-6">
             {loading ? (
-              <>Loading...</>
+              <Loader/>
             ) : (
               recipe.map((detail) => (
                 <RecipeBody detail={detail} key={detail.idMeal} />

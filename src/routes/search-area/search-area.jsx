@@ -97,12 +97,16 @@ export default function SearchArea() {
 
   return (
     <Fragment>
-      <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
-        <label className="block text-lg font-bold leading-6 text-gray-900 mb-4">
-          Select Area
-        </label>
+       <div className="w-full h-40  bg-orange-500"></div>
+      <div className="mx-auto pt-6 px-8 max-w-3xl -mt-32 bg-slate-100">
+        <div className="py-4 px-6 text-center">
+          <h1 className="text-6xl font-extrabold tracking-tight text-gray-900">
+            Search by area
+          </h1>
+          <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
+       
         <select
-          className="mt-1 max-h-56 w-32 rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          className="mt-1 min-w-48 max-w-80 h-10 pl-4 border-2 border-gray-400 bg-white py-1 text-base text-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           value={selectedArea}
           onChange={handleChange}
         >
@@ -115,6 +119,9 @@ export default function SearchArea() {
           })}
         </select>
       </div>
+        </div>
+      </div>
+      
 
       <div>
         <RecipesListByArea parameter={selectedArea} />

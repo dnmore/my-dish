@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import RecipeCard from "../recipe-card/recipe-card";
+import Loader from "../loader/loader";
 
 const RecipesListByIngredient = ({ parameter }) => {
   const [ingredientRecipes, setIngredientRecipes] = useState([]);
@@ -29,8 +30,8 @@ const RecipesListByIngredient = ({ parameter }) => {
 
   if (!ingredientRecipes) {
     return (
-      <p className="text-center text-red-500">
-        No data to display for <strong>{parameter}</strong> , please type
+      <p className="text-center text-red-500 mt-4">
+        No data to display for <strong>{parameter}</strong> , please try
         another ingredient
       </p>
     );
@@ -43,7 +44,7 @@ const RecipesListByIngredient = ({ parameter }) => {
           </h2>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {loading ? (
-              <>Loading..</>
+              <Loader />
             ) : (
               ingredientRecipes.map((card) => {
                 return <RecipeCard card={card} key={card.idMeal} />;

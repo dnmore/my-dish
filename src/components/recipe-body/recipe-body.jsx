@@ -3,15 +3,19 @@ import { Fragment } from "react";
 const RecipeBody = ({ detail }) => {
   return (
     <Fragment>
-      <div className="mt-4">
-        <div className="mx-auto px-4 pb-16 pt-10 sm:px-6 ">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl mb-2">
-              {detail.strMeal}
-            </h1>
-            <span className="text-red-500 font-bold">{detail.strArea}</span>
-          </div>
+      
+      <div className="mx-auto py-6 px-8 w-full -mt-32 bg-slate-100">
+        <div className="py-4 px-6">
+          <h1 className="text-xl font-extrabold tracking-tight text-gray-900 mb-4">
+          {detail.strMeal}
+          </h1>
+          <span className="py-2 px-3 mr-2 bg-slate-900 text-white text-sm font-bold">{detail.strCategory}</span>
+          <span className="py-2 px-3 bg-slate-900 text-white text-sm  font-bold">{detail.strArea}</span>
+          
         </div>
+      </div>
+      <div className="mt-4">
+        
 
         <div className="overflow-hidden sm:rounded-lg">
           <img src={detail.strMealThumb} alt={detail.strMeal} />
@@ -19,7 +23,7 @@ const RecipeBody = ({ detail }) => {
 
         <div className="py-10">
           <div className="mt-10 px-5">
-            <h3 className="text-sm font-bold text-gray-900">Ingredients</h3>
+            <h3 className="text-xl font-bold text-gray-900">Ingredients</h3>
             <div className="mt-4">
               <ol className="list-none space-y-2 pl-4 text-sm">
                 <li>
@@ -127,10 +131,10 @@ const RecipeBody = ({ detail }) => {
           </div>
         </div>
         <div className="px-5 py-4">
-          <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl pb-10">
+          <h3 className="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl pb-10">
             How To Prepare {detail.strMeal}
-          </h2>
-          <p className="text-base tracking-tight text-gray-900 text-justify">
+          </h3>
+          <p className="text-base tracking-tight leading-relaxed  text-gray-900 text-justify">
             {detail.strInstructions}
           </p>
         </div>

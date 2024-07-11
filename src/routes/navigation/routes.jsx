@@ -1,6 +1,6 @@
-import { BiHomeAlt2, BiSearch } from "react-icons/bi";
-import { BiFoodMenu } from "react-icons/bi";
+import { BiHomeAlt2 } from "react-icons/bi";
 import { BiFlag } from "react-icons/bi";
+import { PiCookingPot } from "react-icons/pi";
 
 export const routes = [
   {
@@ -8,15 +8,11 @@ export const routes = [
     path: "/",
     Icon: BiHomeAlt2,
   },
-  {
-    title: "Categories",
-    path: "/categories",
-    Icon: BiFoodMenu,
-  },
+  
   {
     title: "Ingredient",
     path: "/ingredient",
-    Icon: BiSearch,
+    Icon: PiCookingPot,
   },
   {
     title: "Area",

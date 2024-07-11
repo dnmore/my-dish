@@ -4,18 +4,21 @@ const CategoryCard = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
 
   return (
-    <div className="group relative">
-      <div className="aspect-h-1 aspect-w-1 max-w-64 overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
-        <img src={strCategoryThumb} alt={strCategory} />
+    <div className="group relative mx-auto">
+      <div className="aspect-h-1 aspect-w-1 overflow-hidden bg-gray-200 group-hover:opacity-75  lg:aspect-none lg:h-48">
+        <img
+          
+          src={strCategoryThumb}
+          alt={strCategory}
+        />
       </div>
       <div className="mt-4 flex justify-between">
         <div>
-          <h3 className="text-sm text-slate-900 font-bold">{strCategory}</h3>
           <NavLink
             to={`/${strCategory}`}
-            className="mt-1 text-sm  text-indigo-500"
+            className="text-lg text-slate-900 font-bold hover:border-b-2 hover:border-orange-500 "
           >
-            View Recipes 
+            {strCategory}
           </NavLink>
         </div>
       </div>
