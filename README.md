@@ -1,6 +1,6 @@
 # RecipeFinder
 
-Recipe web application built using React and Mealdb API.
+Recipe web application built using React and Mealdb API. View live version [here](https://mydish-recipe-finder.netlify.app/).
 
 ## Features
 
