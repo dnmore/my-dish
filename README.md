@@ -1,38 +1,49 @@
-# RecipeFinder
+# RecipeFinder - Recipe Web Application
 
-Recipe web application built using React and Mealdb API. View live version [here](https://mydish-recipe-finder.netlify.app/).
+## Overview
+
+RecipeFinder is a React-based web application that allows users to browse and filter recipes by categories, ingredients, and areas, powered by the MealDB API.
+
+Live Demo [here](https://mydish-recipe-finder.netlify.app/).
 
 ## Features
 
-- filter recipes by category
-- view each recipe in detail with ingredients and preparation steps
-- filter recipes by main ingredient
-- filter recipes by area
+- Filter recipes by category
+- View detailed recipes including ingredients and instructions
+- Filter recipes by main ingredient
+- Filter recipes by geographic area
 
-## Stack
+## Tech Stack
 
-- `react`
-- `react-router-dom`
-- `mealdb API`
-- `tailwindcss`
-- `react-icons`
-- `hamburger-react`
+- `React` – Front-end framework
+- `React-Router-Dom` – For client-side routing
+- `MealDB API` – To fetch recipe data
+- `TailwindCSS` – Utility-first CSS framework
+- `React-Icons` – Icon library
+- `Hamburger-React` – Hamburger menu component
 
-## Cloning
+## Getting Started
+### Installation
 
-You can [clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) and install the dependencies with the following command
+Clone the repository and install dependencies:
 
 ```
+$ git clone https://github.com/dnmore/recipe-finder.git
 $ npm install
 
 ```
-You can run the following command to start the application and visit `http://localhost:3000/`
+
+### Running the Application
+
+To start the development server, run:
 
 ```
 $ npm start
 
 ```
 
+The server will be running at `http://localhost:3000/`
+
 ## License
 
-MIT
+This project is licensed under the MIT License.
