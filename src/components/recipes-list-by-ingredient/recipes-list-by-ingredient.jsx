@@ -30,19 +30,19 @@ const RecipesListByIngredient = ({ parameter }) => {
 
   if (!ingredientRecipes) {
     return (
-      <p className="text-center text-red-500 mt-4">
-        No data to display for <strong>{parameter}</strong> , please try
+      <p className="px-4 text-sm text-coral-red">
+        No data to display for <strong>{parameter}</strong>, please try
         another ingredient
       </p>
     );
   } else {
     return (
-      <div className="bg-white">
-        <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+      <div className="bg-off-white text-charcoal-gray" >
+        <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl ">
+          <h4 className="text-lg font-bold ">
             {parameter}
-          </h2>
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          </h4>
+          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
             {loading ? (
               <Loader />
             ) : (

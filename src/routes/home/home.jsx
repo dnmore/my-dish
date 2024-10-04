@@ -1,22 +1,26 @@
-import Categories from "../../components/categories/categories";
-
+import photo from "../../assets/img.jpg";
 export default function Home() {
   return (
-    <div>
-      <div className="w-full h-40  bg-orange-500"></div>
-      <div className="mx-auto pt-6 px-8 max-w-3xl -mt-32 bg-slate-100">
-        <div className="py-4 px-6 text-center">
-          <h1 className="text-6xl font-extrabold tracking-tight text-gray-900">
-            Recipe finder
-          </h1>
-          <p className="my-6 text-base leading-8 text-gray-600">
-            Browse our collections of recipes from around the world. 
-            Looking for a category or a special ingredient? Inspired by an area? 
-            You are covered for the perfect dish! 
+    <div className="max-w-7xl h-screen w-full flex flex-wrap justify-center items-center text-charcoal-gray">
+      <div className="flex flex-col   max-w-xl pt-32 px-4 lg:px-16 ">
+        <h1 className="text-4xl font-extrabold tracking-tight bg-transparent">
+          Discover Delicious Recipes in a Few Clicks
+        </h1>
+        <p className="text-base md:text-lg">
+          Browse by category, search by ingredient, or explore global
+          cuisines—quick, easy, and flavorful!
+        </p>
+
+        <div className="pt-6">
+          <h3 className="text-xl font-bold">Hungry yet?</h3>
+          <p className="text-base">
+            Start Browsing and let the culinary adventure begin!
           </p>
         </div>
       </div>
-      <Categories />
+      <div className="flex flex-col  max-w-xl pt-32 px-4 lg:px-16 ">
+        <img src={photo} alt="Green chili pepper on white surface by Hari Krishnan from Unsplash" />
+      </div>
     </div>
   );
 }

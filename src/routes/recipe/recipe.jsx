@@ -32,18 +32,15 @@ const Recipe = () => {
 
   return (
     <Fragment>
-      <div className="w-full h-40  bg-orange-500"></div>
-      <div className="bg-white">
-        <div className="pt-6">
-          <div className="mx-auto mt-6 max-w-2xl sm:px-6">
-            {loading ? (
-              <Loader/>
-            ) : (
-              recipe.map((detail) => (
-                <RecipeBody detail={detail} key={detail.idMeal} />
-              ))
-            )}
-          </div>
+      <div className="pt-6">
+        <div className="mx-auto mt-6 max-w-4xl">
+          {loading ? (
+            <Loader />
+          ) : (
+            recipe.map((detail) => (
+              <RecipeBody detail={detail} key={detail.idMeal} />
+            ))
+          )}
         </div>
       </div>
     </Fragment>

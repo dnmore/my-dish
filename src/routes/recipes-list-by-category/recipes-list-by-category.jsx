@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../components/loader/loader";
 import RecipeCard from "../../components/recipe-card/recipe-card";
 
+
 const RecipesListByCategory = () => {
   const { category } = useParams();
   const [categoryRecipes, setCategoryRecipes] = useState([]);
@@ -31,12 +32,12 @@ const RecipesListByCategory = () => {
   }, [category]);
 
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+    <div className="bg-off-white text-charcoal-gray">
+      <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl ">
+        <h3 className="text-xl font-bold uppercase">
           {category}
-        </h2>
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        </h3>
+        <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
           {loading ? (
             <Loader />
           ) : (
