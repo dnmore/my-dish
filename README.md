@@ -11,7 +11,7 @@ Check out the [Live Demo](https://mydish-recipe-finder.netlify.app/) and start c
 - **Filter by Recipe Categories:** Easily browse through recipes based on different food categories (e.g., Chicken, Dessert, Vegan).
 - **Detailed Recipe View:** Get in-depth details on ingredients and step-by-step instructions for each dish.
 - **Filter by Main Ingredient:** Find recipes using a specific main ingredient you like or you have at hand.
-- **Explore by Geographic Area:** Filter and explore traditional recipes from around the world by geographical area.
+- **Explore by Geographical Area:** Filter and explore traditional recipes from around the world by geographical area.
 - **Pagination Support:** Improved user experience with paginated recipe lists, ensuring faster page loads and better navigation, especially for mobile users.
 
 ## 🛠️ Tech Stack
