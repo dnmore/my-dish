@@ -13,8 +13,8 @@ export default function SearchIngredient() {
   };
 
   return (
-    <div>
-      <div className=" bg-off-white text-charcoal-gray ">
+    <div className="bg-off-white text-charcoal-gray h-screen">
+      <div >
         <div className="mx-auto max-w-2xl px-4 pt-24 lg:max-w-4xl">
           <h3 className="text-xl font-bold uppercase">
             Search by main ingredient

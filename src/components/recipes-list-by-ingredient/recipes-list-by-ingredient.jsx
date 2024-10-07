@@ -37,7 +37,7 @@ const RecipesListByIngredient = ({ parameter }) => {
 
   if (!ingredientRecipes) {
     return (
-      <p className="px-4 text-sm text-coral-red">
+      <p className="px-4 text-sm text-coral-red bg-off-white text-center">
         No data to display for <strong>{parameter}</strong>, please try another
         ingredient
       </p>
@@ -50,8 +50,8 @@ const RecipesListByIngredient = ({ parameter }) => {
 
     const totalPages = Math.ceil(ingredientRecipes.length / recipesPerPage);
     return (
-      <div className="bg-off-white text-charcoal-gray">
-        <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl ">
+      <div className="bg-off-white text-charcoal-gray h-screen">
+        <div className="mx-auto max-w-2xl px-4 py-10 lg:max-w-4xl ">
           <h4 className="text-lg font-bold ">{parameter}</h4>
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
             {loading ? (

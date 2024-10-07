@@ -42,7 +42,7 @@ const RecipesListByCategory = () => {
   const totalPages = Math.ceil(categoryRecipes.length / recipesPerPage);
 
   return (
-    <div className="bg-off-white text-charcoal-gray">
+    <div className="bg-off-white text-charcoal-gray h-screen">
       <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl ">
         <h3 className="text-xl font-bold uppercase">
           {category}
