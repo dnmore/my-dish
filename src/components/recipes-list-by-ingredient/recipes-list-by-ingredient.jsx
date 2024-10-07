@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 
 import RecipeCard from "../recipe-card/recipe-card";
 import Loader from "../loader/loader";
+import Pagination from "../pagination/pagination";
 
 const RecipesListByIngredient = ({ parameter }) => {
   const [ingredientRecipes, setIngredientRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recipesPerPage] = useState(6);
 
   useEffect(() => {
     async function getIngredientRecipes() {
@@ -25,32 +28,47 @@ const RecipesListByIngredient = ({ parameter }) => {
         setLoading(false);
       }
     }
+    setCurrentPage(1);
     getIngredientRecipes();
   }, [parameter]);
+
+  const indexOfLastRecipe = currentPage * recipesPerPage;
+  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
 
   if (!ingredientRecipes) {
     return (
       <p className="px-4 text-sm text-coral-red">
-        No data to display for <strong>{parameter}</strong>, please try
-        another ingredient
+        No data to display for <strong>{parameter}</strong>, please try another
+        ingredient
       </p>
     );
   } else {
+    const currentRecipes = ingredientRecipes.slice(
+      indexOfFirstRecipe,
+      indexOfLastRecipe
+    );
+
+    const totalPages = Math.ceil(ingredientRecipes.length / recipesPerPage);
     return (
-      <div className="bg-off-white text-charcoal-gray" >
+      <div className="bg-off-white text-charcoal-gray">
         <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl ">
-          <h4 className="text-lg font-bold ">
-            {parameter}
-          </h4>
+          <h4 className="text-lg font-bold ">{parameter}</h4>
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
             {loading ? (
               <Loader />
             ) : (
-              ingredientRecipes.map((card) => {
+              currentRecipes.map((card) => {
                 return <RecipeCard card={card} key={card.idMeal} />;
               })
             )}
           </div>
+          {!loading && totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={(page) => setCurrentPage(page)}
+            />
+          )}
         </div>
       </div>
     );

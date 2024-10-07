@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'mint-green': '#43B5A0',
+        "mint-green": "#43B5A0",
         "golden-yellow": "#FFD166",
         "sky-blue":"#3DA9FC",
         "warm-beige": "#F1E8D3",

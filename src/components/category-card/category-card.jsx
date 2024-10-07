@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const CategoryCard = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
@@ -16,9 +17,9 @@ const CategoryCard = ({ category }) => {
         <div>
           <NavLink
             to={`/${strCategory}`}
-            className="text-lg font-bold border-b-2 border-b-transparent hover:border-b-mint-green "
+            className="flex items-center gap-1 text-sm uppercase font-semibold text-sky-blue hover:gap-2 transition-all duration-1000 ease-in-out"
           >
-            {strCategory}
+            {strCategory} <FaArrowRightLong  className="text-sky-blue" />
           </NavLink>
         </div>
       </div>
