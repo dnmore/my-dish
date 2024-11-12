@@ -1,4 +1,4 @@
-import photo from "../../assets/img.jpg";
+import photo from "../../assets/img.webp";
 export default function Home() {
   return (
     <div className="max-w-7xl h-screen w-full flex flex-wrap justify-center items-center text-charcoal-gray">
