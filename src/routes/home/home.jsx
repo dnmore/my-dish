@@ -19,7 +19,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col  max-w-xl md:pt-32 px-4 lg:px-16 ">
-        <img src={photo} alt="Green chili pepper on white surface by Hari Krishnan from Unsplash" />
+        <img fetchpriority="high" src={photo} alt="Green chili pepper on white surface by Hari Krishnan from Unsplash" />
       </div>
     </div>
   );
