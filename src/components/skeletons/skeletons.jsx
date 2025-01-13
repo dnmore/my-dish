@@ -131,7 +131,7 @@ export function RecipeSkeleton() {
         </div>
       </div>
       <div className="min-w-80 min-h-96 mt-4 grid grid-cols-1 md:grid-cols-2 md:shadow-lg md:rounded-sm">
-        <div className="w-full h-full bg-gray-300" />
+        <div className="w-full min-h-96 h-full bg-gray-300" />
 
         <div className="p-5 bg-warm-beige">
           <div className="my-4 h-6 w-36 bg-gray-300" />
