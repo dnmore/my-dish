@@ -25,8 +25,8 @@ Check out the [Live Demo](https://mydish-recipe-finder.netlify.app/) and start c
 
 ## 🎨 UI/UX Features
 
-- **Responsive Design:** Mobile-first layout for a smooth experience on all screen sizes.
-- **Loading Indicators:** Displays a loader while fetching data from the API to ensure a smooth user experience.
+- **Responsive Design:** Optimized for desktop and mobile devices.
+- **Loading State Skeletons** Skeleton components for smooth user experience during fetching data from the API.
 - **Hover Effects & Transitions:** Enhanced visual feedback during interaction, making the app more engaging.
 - **Disabled States for Pagination:** Clearly indicate when users have reached the first or last page, improving accessibility.
 
