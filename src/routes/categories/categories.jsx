@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Loader from "../../components/loader/loader";
 import CategoryCard from "../../components/category-card/category-card";
 import Pagination from "../../components/pagination/pagination";
+import { CategoriesSkeleton } from "../../components/skeletons/skeletons";
+
 export default function Categories() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -32,7 +33,10 @@ export default function Categories() {
 
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
-  const currentCategories = categories.slice(indexOfFirstRecipe, indexOfLastRecipe);
+  const currentCategories = categories.slice(
+    indexOfFirstRecipe,
+    indexOfLastRecipe
+  );
 
   const totalPages = Math.ceil(categories.length / recipesPerPage);
 
@@ -40,9 +44,9 @@ export default function Categories() {
     <div className="bg-off-white text-charcoal-gray">
       <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-4xl lg:px-8">
         <h3 className="text-xl font-bold uppercase">Categories</h3>
-        <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 ">
+        <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 w-full">
           {loading ? (
-            <Loader />
+            <CategoriesSkeleton />
           ) : (
             currentCategories.map((category) => (
               <CategoryCard key={category.idCategory} category={category} />

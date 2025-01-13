@@ -5,7 +5,7 @@ const CategoryCard = ({ category }) => {
   const { strCategory, strCategoryThumb } = category;
 
   return (
-    <div className="group relative mx-auto border border-gray-200 shadow-md rounded-sm overflow-hidden ">
+    <div className="group relative mx-auto border border-gray-200 shadow-md rounded-sm overflow-hidden  min-w-80 min-h-64">
       <div className="aspect-h-1 aspect-w-1 group-hover:scale-105  lg:aspect-none lg:h-48 transition-all duration-1000 ease-in-out">
         <img
           

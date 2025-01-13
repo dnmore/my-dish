@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import RecipeCard from "../recipe-card/recipe-card";
-import Loader from "../loader/loader";
+import { RecipesListSkeleton } from "../skeletons/skeletons";
 import Pagination from "../pagination/pagination";
 
 const RecipesListByIngredient = ({ parameter }) => {
@@ -55,7 +55,7 @@ const RecipesListByIngredient = ({ parameter }) => {
           <h4 className="text-lg font-bold ">{parameter}</h4>
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
             {loading ? (
-              <Loader />
+              <RecipesListSkeleton />
             ) : (
               currentRecipes.map((card) => {
                 return <RecipeCard card={card} key={card.idMeal} />;
