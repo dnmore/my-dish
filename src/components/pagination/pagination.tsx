@@ -1,9 +1,15 @@
 import React from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+type PaginationProps = {
+  currentPage: number
+  totalPages: number
+  onPageChange:(page:number) => void
+}
+
+const Pagination:React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
-    const pageNumbers = [];
+    const pageNumbers:React.ReactNode[] = [];
 
     const startPage = currentPage > 2 ? currentPage - 1 : 1;
     const endPage = currentPage < totalPages - 1 ? currentPage + 1 : totalPages;

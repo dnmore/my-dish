@@ -3,17 +3,24 @@ import { useState, useEffect } from "react";
 import RecipeCard from "../recipe-card/recipe-card";
 import { RecipesListSkeleton } from "../skeletons/skeletons";
 import Pagination from "../pagination/pagination";
+import { RecipeDetails } from "../../types/definitions";
 
-const RecipesListByArea = ({ parameter }) => {
+interface RecipesListAreaProps {
+  parameter: string;
+}
+
+const RecipesListByArea: React.FC<RecipesListAreaProps> = ({ parameter }) => {
   const [areaRecipes, setAreaRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(6);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function getAreaRecipes() {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch(
           `https://www.themealdb.com/api/json/v1/1/filter.php?a=${parameter}`
         );
@@ -24,7 +31,7 @@ const RecipesListByArea = ({ parameter }) => {
           setAreaRecipes(data.meals);
         }
       } catch (error) {
-        console.log(error);
+        setError("Failed to fetch recipe details");
         setLoading(false);
       }
     }
@@ -47,12 +54,14 @@ const RecipesListByArea = ({ parameter }) => {
         <h4 className="text-lg font-bold uppercase">{parameter}</h4>
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 md:grid-cols-2 ">
           {loading ? (
-            <RecipesListSkeleton/>
-          ) : (
-            currentRecipes.map((card) => {
+            <RecipesListSkeleton />
+          ) : error ? (
+            <p className="text-red-500 py-20 text-center">{error}</p>
+          ) : currentRecipes ? (
+            currentRecipes.map((card: RecipeDetails) => {
               return <RecipeCard card={card} key={card.idMeal} />;
             })
-          )}
+          ) : null}
         </div>
         {!loading && totalPages > 1 && (
           <Pagination

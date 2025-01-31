@@ -1,4 +1,4 @@
-import photo from "../../assets/hero.png";
+import Hero from "../../assets/hero.png";
 export default function Home() {
   return (
     <div className="max-w-7xl h-screen w-full flex flex-wrap gap-4 justify-center items-center text-charcoal-gray">
@@ -20,7 +20,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col pb-4 max-w-xl md:pt-32 px-4 lg:px-16 ">
         <img
-          src={photo}
+          src={Hero}
           alt="Two preview dishes of a dessert and a soup"
           width={571}
           height={500}

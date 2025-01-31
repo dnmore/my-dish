@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import RecipesListByIngredient from "../../components/recipes-list-by-ingredient/recipes-list-by-ingredient";
 import { IoSearchSharp } from "react-icons/io5";
 
@@ -6,7 +6,7 @@ export default function SearchIngredient() {
   const [mainIngredient, setMainIngredient] = useState("");
   const [parameter, setParameter] = useState("");
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setParameter(mainIngredient.toLocaleUpperCase());
     setMainIngredient("");

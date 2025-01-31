@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import CategoryCard from "../../components/category-card/category-card";
 import Pagination from "../../components/pagination/pagination";
 import { CategoriesSkeleton } from "../../components/skeletons/skeletons";
+import { Category } from "../../types/definitions";
 
-export default function Categories() {
+const Categories= () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(6);
+  const [error, setError] = useState<string | null>(null);
 
+ 
   useEffect(() => {
-    async function getCategories() {
+    async function getCategories(){
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch(
           "https://www.themealdb.com/api/json/v1/1/categories.php"
         );
@@ -24,7 +28,7 @@ export default function Categories() {
           setCategories(data.categories);
         }
       } catch (error) {
-        console.log(error);
+        setError("Failed to fetch categories");
         setLoading(false);
       }
     }
@@ -47,11 +51,13 @@ export default function Categories() {
         <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 w-full">
           {loading ? (
             <CategoriesSkeleton />
-          ) : (
-            currentCategories.map((category) => (
+          ) : error ? (
+            <p className="text-red-500 py-20 text-center">{error}</p>
+          ) : currentCategories ? (
+            currentCategories.map((category:Category) => (
               <CategoryCard key={category.idCategory} category={category} />
             ))
-          )}
+          ) : null}
         </div>
         {!loading && totalPages > 1 && (
           <Pagination
@@ -64,3 +70,6 @@ export default function Categories() {
     </div>
   );
 }
+
+
+export default Categories

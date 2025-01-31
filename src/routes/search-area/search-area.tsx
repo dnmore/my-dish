@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import RecipesListByArea from "../../components/recipes-list-by-area/recipes-list-by-area";
 
+export type AreaOption = {
+strArea: string
+}
 export default function SearchArea() {
-  const areaOptions = [
+  const areaOptions: AreaOption[]= [
     {
       strArea: "American",
     },
@@ -91,7 +94,7 @@ export default function SearchArea() {
   ];
   const [selectedArea, setSelectedArea] = useState("American");
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedArea(e.target.value);
   };
 
@@ -106,9 +109,9 @@ export default function SearchArea() {
               value={selectedArea}
               onChange={handleChange}
             >
-              {areaOptions.map((option) => {
+              {areaOptions.map((option, i) => {
                 return (
-                  <option key={option.strArea} value={option.value}>
+                  <option key={i}>
                     {option.strArea}
                   </option>
                 );
