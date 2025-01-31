@@ -17,6 +17,7 @@ Check out the [Live Demo](https://mydish-recipe-finder.netlify.app/) and start c
 ## 🛠️ Tech Stack
 
 - `React` – A powerful front-end JavaScript library for building user interfaces.
+- `TypeScript` – Enhances the project with static typing, improving code quality and maintainability.
 - `React-Router-Dom` – Enables smooth client-side routing and navigation between different recipe categories, ingredients, and regions.
 - `MealDB API` – The primary source of recipe data, providing comprehensive information on thousands of dishes from around the world.
 - `TailwindCSS` – A utility-first CSS framework that simplifies the styling process with minimal custom CSS.
