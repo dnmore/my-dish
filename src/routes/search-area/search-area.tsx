@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 
 import RecipesListByArea from "../../components/recipes-list-by-area/recipes-list-by-area";
 
-export type AreaOption = {
+type AreaOption = {
 strArea: string
 }
 export default function SearchArea() {
@@ -94,8 +94,8 @@ export default function SearchArea() {
   ];
   const [selectedArea, setSelectedArea] = useState("American");
 
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedArea(e.target.value);
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedArea(event.target.value);
   };
 
   return (

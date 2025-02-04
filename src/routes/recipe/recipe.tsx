@@ -4,33 +4,35 @@ import { Fragment } from "react";
 import RecipeBody from "../../components/recipe-body/recipe-body";
 import { RecipeSkeleton } from "../../components/skeletons/skeletons";
 import { RecipeDetails } from "../../types/definitions";
+import { getData } from "../../utils/data.utils";
 
 const Recipe = () => {
   const { id } = useParams();
-  const [recipe, setRecipe] = useState([]);
+  const [recipe, setRecipe] = useState<RecipeDetails[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function getRecipeDetails() {
+    const getRecipeDetails = async () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch(
+
+        const data = await getData<{ meals: RecipeDetails[] }>(
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
         );
 
-        const data = await response.json();
-        setLoading(false);
-
-        if (data) {
+        if (data?.meals) {
           setRecipe(data.meals);
+        } else {
+          setError("No recipe found");
         }
       } catch (error) {
         setError("Failed to fetch recipe details");
+      } finally {
         setLoading(false);
       }
-    }
+    };
     getRecipeDetails();
   }, [id]);
 

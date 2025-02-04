@@ -3,38 +3,41 @@ import CategoryCard from "../../components/category-card/category-card";
 import Pagination from "../../components/pagination/pagination";
 import { CategoriesSkeleton } from "../../components/skeletons/skeletons";
 import { Category } from "../../types/definitions";
+import { getData } from "../../utils/data.utils";
 
-const Categories= () => {
-  const [categories, setCategories] = useState([]);
+const Categories = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(6);
   const [error, setError] = useState<string | null>(null);
 
- 
   useEffect(() => {
-    async function getCategories(){
+    const fetchCategories = async () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch(
+
+        const data = await getData<{ categories: Category[] }>(
           "https://www.themealdb.com/api/json/v1/1/categories.php"
         );
 
-        const data = await response.json();
-        setLoading(false);
-
-        if (data) {
+        if (data?.categories) {
           setCategories(data.categories);
+        } else {
+          setError("No categories found.");
         }
       } catch (error) {
         setError("Failed to fetch categories");
+      } finally {
         setLoading(false);
       }
-    }
-    getCategories();
+    };
+
+    fetchCategories();
   }, []);
 
+  
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
   const currentCategories = categories.slice(
@@ -54,7 +57,7 @@ const Categories= () => {
           ) : error ? (
             <p className="text-red-500 py-20 text-center">{error}</p>
           ) : currentCategories ? (
-            currentCategories.map((category:Category) => (
+            currentCategories.map((category: Category) => (
               <CategoryCard key={category.idCategory} category={category} />
             ))
           ) : null}
@@ -69,7 +72,6 @@ const Categories= () => {
       </div>
     </div>
   );
-}
+};
 
-
-export default Categories
+export default Categories;

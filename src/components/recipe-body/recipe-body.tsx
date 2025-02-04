@@ -2,11 +2,11 @@ import { Fragment } from "react";
 import { GiKnifeFork, GiCarrot } from "react-icons/gi";
 import { RecipeDetails } from "../../types/definitions";
 
-interface RecipeBodyProps {
+type RecipeBodyProps = {
   details: RecipeDetails;
 }
 
-const RecipeBody: React.FC<RecipeBodyProps> = ({ details }) => {
+const RecipeBody = ({ details }: RecipeBodyProps) => {
   return (
     <Fragment>
       <div className="mx-auto py-6 w-full text-charcoal-gray">

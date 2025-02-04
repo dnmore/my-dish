@@ -4,39 +4,43 @@ import RecipeCard from "../recipe-card/recipe-card";
 import { RecipesListSkeleton } from "../skeletons/skeletons";
 import Pagination from "../pagination/pagination";
 import { RecipeDetails } from "../../types/definitions";
+import { getData } from "../../utils/data.utils";
 
-interface RecipesListByIngredientProps {
+type RecipesListByIngredientProps = {
   parameter: string;
-}
+};
 
-const RecipesListByIngredient: React.FC<RecipesListByIngredientProps> = ({
+const RecipesListByIngredient = ({
   parameter,
-}) => {
-  const [ingredientRecipes, setIngredientRecipes] = useState([]);
+}: RecipesListByIngredientProps) => {
+  const [ingredientRecipes, setIngredientRecipes] = useState<RecipeDetails[]>(
+    []
+  );
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(6);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function getIngredientRecipes() {
+    const getIngredientRecipes = async () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch(
+
+        const data = await getData<{ meals: RecipeDetails[] }>(
           `https://www.themealdb.com/api/json/v1/1/filter.php?i=${parameter}`
         );
-        const data = await response.json();
-        setLoading(false);
-
-        if (data) {
+        if (data?.meals) {
           setIngredientRecipes(data.meals);
+        } else {
+          setError("No recipes found.");
         }
       } catch (error) {
-        setError("Failed to fetch recipe details");
+        setError("Failed to fetch recipes");
+      } finally {
         setLoading(false);
       }
-    }
+    };
     setCurrentPage(1);
     getIngredientRecipes();
   }, [parameter]);

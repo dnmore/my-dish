@@ -2,14 +2,18 @@ import React from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-  onPageChange:(page:number) => void
-}
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+};
 
-const Pagination:React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) => {
   const renderPageNumbers = () => {
-    const pageNumbers:React.ReactNode[] = [];
+    const pageNumbers: React.ReactNode[] = [];
 
     const startPage = currentPage > 2 ? currentPage - 1 : 1;
     const endPage = currentPage < totalPages - 1 ? currentPage + 1 : totalPages;
@@ -28,7 +32,6 @@ const Pagination:React.FC<PaginationProps> = ({ currentPage, totalPages, onPageC
       );
     }
 
-    // Show first page and last page for navigation
     if (startPage > 1) {
       pageNumbers.unshift(
         <button

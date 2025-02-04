@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { RecipeDetails } from "../../types/definitions";
 
-interface RecipeCardProps {
+type RecipeCardProps = {
   card: RecipeDetails;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ card }) => {
+const RecipeCard = ({ card } : RecipeCardProps) => {
   const { idMeal, strMeal, strMealThumb } = card;
   return (
     <div className="group relative min-h-60 overflow-hidden grid grid-cols-2 grid-rows-1 mx-auto w-full bg-warm-beige  shadow-md rounded-sm text-charcoal-gray">

@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Category } from "../../types/definitions";
 
-interface CategoryCardProps {
+type CategoryCardProps = {
   category: Category;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
+const CategoryCard = ({ category } : CategoryCardProps) => {
   const { strCategory, strCategoryThumb } = category;
 
   return (
